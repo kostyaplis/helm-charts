@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - master
+  pull_request:
+
 jobs:
   danger:
     name: Post Test results
@@ -25,12 +27,12 @@ jobs:
       # - name: Unzip artifacts(temporary step while download-artifact@v2-preview is broken)
       #   run: |
       #     gunzip -fr -S .xml rspec-junit/*
-      - name: Install bundler and dependencies.
+      - name: Install bundler and dependencies
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
       - name: Run danger
         env:
-          GITHUB_TOKEN: test #${{ secrets.PERX_API_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
         run: |
           bundle exec danger
