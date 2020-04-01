@@ -27,7 +27,7 @@ jobs:
       # - name: Unzip artifacts(temporary step while download-artifact@v2-preview is broken)
       #   run: |
       #     gunzip -fr -S .xml rspec-junit/*
-      - name: Install bundler and dependencies.
+      - name: Install bundler and dependencies
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3

@@ -16,8 +16,9 @@ junit.failures.each do |failure|
   # fail("")
   # msg = ""
   # node = failure.nodes.first
-
-  fail(failure.nodes.second.to_s)
-  fail(failure.nodes.second.value.to_s)
+  failure.nodes.each do |node|
+    fail(node.to_s)
+    fail(node.value.to_s)
+  end
 end
 
