@@ -22,8 +22,11 @@ def parse_files(*files)
     raise "No JUnit file was found at #{file}" unless File.exist? file
 
     xml_string = File.read(file)
-    xml_string.sub("\n","&#xA;")
+    xml_string.gsub!(/\n/,"&#xA;")
     xml_string.sub("`","&apos;")
+
+    xml_string.gsub!(/[‘’]/, "&apos;")
+
     message "#{xml_string}"
     doc = Ox.parse(xml_string)
 
