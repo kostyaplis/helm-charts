@@ -745,6 +745,25 @@ ActionController::RoutingError:
 <testcase classname="spec.requests.v4.campaigns.index_spec" name="V4 Campaigns Index API campaign state returning by params[:state] there are acitve and inactive campaigns in database get campaigns with params[:state] active will return campaigns with state active only" file="./spec/requests/v4/campaigns/index_spec.rb" time="0.374929"></testcase>
 <testcase classname="spec.requests.v4.campaigns.index_spec" name="V4 Campaigns Index API campaign state returning by params[:state] there are acitve and inactive campaigns in database get camapigns with params[:state] inactive will return campaigns with state inactive only" file="./spec/requests/v4/campaigns/index_spec.rb" time="0.442385"></testcase>
 <testcase classname="spec.requests.v4.campaigns.index_spec" name="V4 Campaigns Index API campaign response with enrolled field always return all campaigns enrolled has value is false when any campaigns haven&apos;t any campaign user account" file="./spec/requests/v4/campaigns/index_spec.rb" time="0.117669"></testcase>
+<testcase classname="spec.requests.v4.campaigns.index_spec" name="OgController second redirects to og_document_url" file="./spec/requests/og_spec.rb" time="0.046504"><failure message="No route matches [GET] &quot;/og&quot;" type="ActionController::RoutingError">Failure/Error: @app.call(env)
+
+ActionController::RoutingError:
+  No route matches [GET] &quot;/og&quot;
+/usr/local/bundle/gems/lograge-0.11.2/lib/lograge/rails_ext/rack/logger.rb:15:in `call_app&apos;
+/usr/local/bundle/gems/railties-6.0.2.1/lib/rails/rack/logger.rb:26:in `block in call&apos;
+/usr/local/bundle/gems/railties-6.0.2.1/lib/rails/rack/logger.rb:26:in `call&apos;
+/usr/local/bundle/gems/request_store-1.5.0/lib/request_store/middleware.rb:19:in `call&apos;
+/usr/local/bundle/gems/rack-2.2.2/lib/rack/runtime.rb:22:in `call&apos;
+./app/middleware/invalid_params_interceptor.rb:20:in `call&apos;
+/usr/local/bundle/gems/rack-2.2.2/lib/rack/sendfile.rb:110:in `call&apos;
+/usr/local/bundle/gems/rack-cors-1.0.6/lib/rack/cors.rb:98:in `call&apos;
+/usr/local/bundle/gems/invalid_utf8_rejector-0.0.4/lib/invalid_utf8_rejector/middleware.rb:11:in `call&apos;
+/usr/local/bundle/gems/sentry-raven-2.13.0/lib/raven/integrations/rack.rb:51:in `call&apos;
+/usr/local/bundle/gems/railties-6.0.2.1/lib/rails/engine.rb:526:in `call&apos;
+/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/mock_session.rb:29:in `request&apos;
+/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/test.rb:266:in `process_request&apos;
+/usr/local/bundle/gems/rack-test-1.1.0/lib/rack/test.rb:119:in `request&apos;
+./spec/requests/og_spec.rb:10:in `block (2 levels) in &lt;main&gt;&apos;</failure></testcase>
 <testcase classname="spec.requests.v4.campaigns.index_spec" name="V4 Campaigns Index API campaign response with enrolled field always return list campaigns enrolled has random value have current_user should return true with campaign user account exist with the current user" file="./spec/requests/v4/campaigns/index_spec.rb" time="0.175106"></testcase>
 <testcase classname="spec.requests.v4.campaigns.index_spec" name="V4 Campaigns Index API campaign response with enrolled field always return list campaigns enrolled has random value not have current_user should raise error" file="./spec/requests/v4/campaigns/index_spec.rb" time="0.053246"></testcase>
 <testcase classname="spec.requests.v4.campaigns.index_spec" name="V4 Campaigns Index API campaign response with enrolled field always return all campaigns enrolled has value is true should eq true" file="./spec/requests/v4/campaigns/index_spec.rb" time="0.119031"></testcase>

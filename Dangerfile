@@ -3,8 +3,21 @@ result_files = Dir.glob("rspec-junit/rspec-*")
 junit.parse_files result_files
 junit.show_skipped_tests = true
 # junit.headers = %i(file name message)
-junit.report
-all_test = junit.tests.map(&:attributes)
-slowest_test = sort_by { |attributes| attributes[:time].to_f }.last
-message "#{slowest_test[:time]} took #{slowest_test[:time]} seconds"
-puts junit.failures
+# junit.report
+# all_test = junit.tests.map(&:attributes)
+# slowest_test = all_test.sort_by { |attributes| attributes[:time].to_f }.last
+# message "#{slowest_test[:name]} took #{slowest_test[:time]} seconds"
+
+message junit.failures.to_s
+
+junit.failures.each do |failure|
+  message failure.to_s
+  # failure.map(&:attributes)
+  # fail("")
+  # msg = ""
+  # node = failure.nodes.first
+
+  fail(failure.nodes.second.to_s)
+  fail(failure.nodes.second.value.to_s)
+end
+
